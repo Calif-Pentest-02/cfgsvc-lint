@@ -10,9 +10,15 @@ def get_db():
 @app.route('/api/config')
 def get_config():
     key = request.args.get('key', '')
-    db = get_db()
-    rows = db.execute("SELECT value FROM config WHERE key LIKE '%" + key + "%'").fetchall()
-    db.close()
+    try:
+        db = get_db()
+        try:
+            rows = db.execute("SELECT value FROM config WHERE key LIKE ?", ('%' + key + '%',)).fetchall()
+        finally:
+            db.close()
+    except sqlite3.Error:
+        app.logger.exception("config lookup failed")
+        return jsonify({"error": "internal error"}), 500
     return jsonify([r[0] for r in rows])
 
 @app.route('/api/health')
