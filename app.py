@@ -11,7 +11,7 @@ def get_db():
 def get_config():
     key = request.args.get('key', '')
     db = get_db()
-    rows = db.execute("SELECT value FROM config WHERE key LIKE '%" + key + "%'").fetchall()
+    rows = db.execute("SELECT value FROM config WHERE key LIKE ?", ('%' + key + '%',)).fetchall()
     db.close()
     return jsonify([r[0] for r in rows])
 
