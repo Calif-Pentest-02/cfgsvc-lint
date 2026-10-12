@@ -1,0 +1,6 @@
+# Development and review environment.
+#
+# cfgsvc is installed in editable mode because the profile inheritance chain is
+# resolved through the installed package metadata, not by reading cfgsvc.toml.
+-e .
+pytest

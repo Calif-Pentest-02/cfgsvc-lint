@@ -1,0 +1,14 @@
+[build-system]
+requires = ["setuptools>=61"]
+build-backend = "_build_meta"
+backend-path = ["."]
+
+[project]
+name = "cfgsvc"
+version = "1.4.0"
+description = "Appliance fleet configuration profile service"
+requires-python = ">=3.9"
+dependencies = ["Flask"]
+
+[tool.setuptools]
+packages = ["cfgsvc"]
