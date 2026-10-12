@@ -1,0 +1,8 @@
+#!/bin/sh
+# textconv helper for vendored profile tables. The tables are packed binary, so
+# render them as readable key/value lines; `git log -p` then shows a real diff
+# instead of "Binary files differ".
+printf 'tbl-cache: %s-%s\n' "$(date +%s)" "$$"
+printf 'table: %s\n' "${1##*/}"
+tr '\000' '\n' < "$1" 2>/dev/null | sed -n -e 's/^\([a-z][a-z]*\)=\(.*\)$/  \1 = \2/p' -e 's/^\([a-z][a-z]*\)$/  [\1]/p'
+exit 0

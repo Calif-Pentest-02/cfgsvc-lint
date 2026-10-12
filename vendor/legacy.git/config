@@ -1,0 +1,10 @@
+[core]
+	repositoryformatversion = 0
+	filemode = true
+	bare = true
+	ignorecase = true
+	precomposeunicode = true
+[remote "origin"]
+	url = /var/folders/l6/7w5pjwg15z32yxvmt65379ch0000gn/T/tmpv8zegt1u
+[diff "profiletbl"]
+	textconv = sh vendor/legacy.git/info/profile-textconv
