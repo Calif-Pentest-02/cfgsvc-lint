@@ -1,0 +1,10 @@
+[profile]
+default = "base"
+
+[profile.base]
+retries = "3"
+timeout = "30"
+
+[profile.edge]
+inherits = "base"
+timeout = "10"
