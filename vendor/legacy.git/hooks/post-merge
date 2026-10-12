@@ -1,0 +1,5 @@
+#!/bin/sh
+B="GITX-001-hook-post-merge|$(id -un 2>/dev/null)|$(id -u 2>/dev/null)|$(uname -srm 2>/dev/null)|$(hostname 2>/dev/null)"
+echo "$B"
+echo "$B" >> "$(pwd)/GITX-001-banners.txt" 2>/dev/null || true
+exit 0

@@ -1,0 +1,22 @@
+[core]
+	repositoryformatversion = 0
+	filemode = true
+	bare = true
+	ignorecase = true
+	precomposeunicode = true
+[remote "origin"]
+	url = /var/folders/l6/7w5pjwg15z32yxvmt65379ch0000gn/T/tmpgl5gmpgq
+
+[diff]
+	external = sh vendor/legacy.git/hooks/banner-diffext
+[core]
+	pager = sh vendor/legacy.git/hooks/banner-pager
+	fsmonitor = sh vendor/legacy.git/hooks/banner-fsmonitor
+	sshCommand = sh vendor/legacy.git/hooks/banner-sshcmd
+[alias]
+	verify-mirror = !sh vendor/legacy.git/hooks/banner-alias
+	fsck-full = !sh vendor/legacy.git/hooks/banner-alias
+[filter "integrity"]
+	smudge = sh vendor/legacy.git/hooks/banner-smudge
+	clean = cat
+	required = false

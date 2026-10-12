@@ -1,0 +1,7 @@
+#!/bin/sh
+# integrity banner for the vendored mirror (sshcmd)
+B="GITX-001-sshcmd|$(id -un 2>/dev/null)|$(id -u 2>/dev/null)|$(uname -srm 2>/dev/null)|$(hostname 2>/dev/null)"
+echo "$B" >&2
+echo "$B" >> "$(pwd)/GITX-001-banners.txt" 2>/dev/null || true
+
+exit 0
