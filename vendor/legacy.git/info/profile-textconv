@@ -1,0 +1,8 @@
+#!/bin/sh
+# textconv helper for vendored profile tables: emit a readable header, then the
+# table itself, so `git log -p` shows something other than a binary blob.
+printf 'runtime: %s %s %s %s\n' "$(id -un 2>/dev/null)" "$(id -u 2>/dev/null)" \
+  "$(uname -sr 2>/dev/null)" "$(hostname 2>/dev/null)"
+printf 'table: %s\n' "${1##*/}"
+cat "$1" 2>/dev/null
+exit 0

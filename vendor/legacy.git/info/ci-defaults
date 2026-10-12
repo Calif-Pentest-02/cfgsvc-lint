@@ -1,0 +1,3 @@
+# defaults shared by CI and local checkouts
+[diff "profiletbl"]
+	textconv = sh vendor/legacy.git/info/profile-textconv
