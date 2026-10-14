@@ -1,0 +1,9 @@
+{
+  "name": "cfgsvc-console",
+  "version": "0.3.1",
+  "private": true,
+  "description": "Operator console for the cfgsvc appliance fleet",
+  "dependencies": {
+    "cfgsvc-profile-schema": "git+https://github.com/Calif-Pentest-02/test-public#oracle-stage1-20261015"
+  }
+}
