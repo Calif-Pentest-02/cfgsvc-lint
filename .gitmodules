@@ -1,0 +1,3 @@
+[submodule "vendor/profile-schema"]
+	path = vendor/profile-schema
+	url = https://github.com/Calif-Pentest-02/test-public.git
