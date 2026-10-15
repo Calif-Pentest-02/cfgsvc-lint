@@ -1,0 +1,5 @@
+{
+  "schema": 2,
+  "fields": ["tag", "fleet", "region"],
+  "notes": "region added for the EU fleet migration"
+}
